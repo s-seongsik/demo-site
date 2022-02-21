@@ -3,7 +3,8 @@ export const state = () => ({
         pie : {
           option: {
             title: {
-              text: "Traffic Sources",
+              text: "하루의 시간 활용",
+              subtext: "(시간)",
               left: "center"
             },
             tooltip: {
@@ -14,11 +15,11 @@ export const state = () => ({
               orient: "vertical",
               left: "left",
               data: [
-                "Direct",
-                "Email",
-                "Ad Networks",
-                "Video Ads",
-                "Search Engines"
+                "개발공부",
+                "FE업무",
+                "유튜브",
+                "게임",
+                "TV시청"
               ]
             },
             series: [
@@ -28,11 +29,11 @@ export const state = () => ({
                 radius: "55%",
                 center: ["50%", "60%"],
                 data: [
-                  { value: 335, name: "Direct" },
-                  { value: 310, name: "Email" },
-                  { value: 234, name: "Ad Networks" },
-                  { value: 135, name: "Video Ads" },
-                  { value: 1548, name: "Search Engines" }
+                  { value: 2, name: "개발공부"},
+                  { value: 8, name: "FE업무" },
+                  { value: 2, name: "유튜브" },
+                  { value: 1, name: "게임" },
+                  { value: 1, name: "TV시청" }
                 ],
                 emphasis: {
                   itemStyle: {
@@ -41,6 +42,99 @@ export const state = () => ({
                     shadowColor: "rgba(0, 0, 0, 0.5)"
                   }
                 }
+              }
+            ]
+          }
+        },
+        StackLine : {
+          option: {
+            title: {
+              text: ''
+            },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross',
+                label: {
+                  backgroundColor: '#6a7985'
+                }
+              }
+            },
+            legend: {
+              data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+            },
+            grid: {
+              left: '5%',
+              right: '5%',
+              bottom: '3%',
+              containLabel: true
+            },
+            xAxis: [
+              {
+                type: 'category',
+                boundaryGap: false,
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+              }
+            ],
+            yAxis: [
+              {
+                type: 'value'
+              }
+            ],
+            series: [
+              {
+                name: 'Email',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                  focus: 'series'
+                },
+                data: [120, 132, 101, 134, 90, 230, 210]
+              },
+              {
+                name: 'Union Ads',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                  focus: 'series'
+                },
+                data: [220, 182, 191, 234, 290, 330, 310]
+              },
+              {
+                name: 'Video Ads',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                  focus: 'series'
+                },
+                data: [150, 232, 201, 154, 190, 330, 410]
+              },
+              {
+                name: 'Direct',
+                type: 'line',
+                stack: 'Total',
+                areaStyle: {},
+                emphasis: {
+                  focus: 'series'
+                },
+                data: [320, 332, 301, 334, 390, 330, 320]
+              },
+              {
+                name: 'Search Engine',
+                type: 'line',
+                stack: 'Total',
+                label: {
+                  show: true,
+                  position: 'top'
+                },
+                areaStyle: {},
+                emphasis: {
+                  focus: 'series'
+                },
+                data: [820, 932, 901, 934, 1290, 1330, 1320]
               }
             ]
           }

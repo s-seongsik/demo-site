@@ -66,7 +66,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Demo Site',
+      title: "Seongsik Seo's Monitoring",
     }
   },
 }
